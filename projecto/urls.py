@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from aplicacion.views import *
-
+ 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('usuarios/', mostrarUsuarios, name="usuarios-list"),
     path('usuarios/agregar', agregarUsuario, name="usuario-create"),
+    path('usuario/borrar/<id>', borrarUsuario, name="usuario-delete"),
+
     
 ]

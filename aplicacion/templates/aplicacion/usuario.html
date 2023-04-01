@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +24,7 @@
         
         
         {% for usuario in usuarios %}
-        <li>{{usuario}}</li>
+        <li>{{usuario}} <a href="{% url 'usuario-delete' usuario.id %}">Borrar</a> </li>
         {% endfor %}
 
 

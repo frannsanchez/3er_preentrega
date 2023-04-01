@@ -15,3 +15,10 @@ def agregarUsuario(request):
     nuevoUsuario.save()
     return mostrarUsuarios(request)
 
+def borrarUsuario(request, id):
+    user = Usuario.objects.filter(id=id).first()
+    user.delete()
+    return mostrarUsuarios(request)
+
+
+
