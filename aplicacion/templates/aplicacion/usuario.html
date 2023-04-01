@@ -8,9 +8,24 @@
 </head>
 <body>
     <ul>
+        <h4>Agregar un Usuario</h4>
+                <form action="{% url 'usuario-create' %}" method="GET">
+                    <label name="nombre">Nombre</label>
+                    <input type="text" name="nombre">
+                    <label name="usuario">Usuario</label>
+                    <input type="text" name="usuario">
+                    <label name="contrasena">Contraseña</label>
+                    <input type="text" name="contrasena">
+                    <label name="grupo">Grupo</label>
+                    <input type="text" name="grupo">
+                    <input type="submit" value="Agregar">
+                </form>
+        
+        
         {% for usuario in usuarios %}
         <li>{{usuario}}</li>
         {% endfor %}
+
 
     </ul>
 </body>

@@ -3,6 +3,15 @@ from django.http import HttpResponse
 from aplicacion.models import Usuario, Publicacion, Grupo
 
 def mostrarUsuarios(request):
-    usuario = Usuario.objets.all()
-    return render({request, "aplicacion/usuario.html", {"usuarios": usuario}})
+    usuarios = Usuario.objects.all()
+    return render(request, "aplicacion/usuario.html", {"usuarios": usuarios})
+
+def agregarUsuario(request):
+    nombreU = request.GET.get("nombre")
+    usuarioU = request.GET.get("usuario")
+    contrasenaU = request.GET.get("contrasena")
+    grupoU = request.GET.get("grupo")
+    nuevoUsuario = Usuario(nombre=nombreU, usuario=usuarioU, contrasena=contrasenaU, grupo=grupoU)
+    nuevoUsuario.save()
+    return mostrarUsuarios(request)
 

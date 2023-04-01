@@ -20,5 +20,6 @@ from aplicacion.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('usuarios/', mostrarUsuarios, name="usuarios-list"),
+    path('usuarios/agregar', agregarUsuario, name="usuario-create"),
     
 ]
