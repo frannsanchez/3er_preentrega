@@ -5,7 +5,7 @@ class Usuario(models.Model):
     usuario = models.TextField(max_length=100)
     contrasena = models.TextField(max_length=100)
     grupo = models.TextField(max_length=100)
-    
+
     def __str__(self):
         return f"{self.id} - {self.usuario} - {self.grupo}"
 
