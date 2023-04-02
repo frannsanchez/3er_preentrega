@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from aplicacion.models import Usuario
 from django.views.generic import ListView
 
+def index(request):
+    return render(request, "aplicacion/index.html")
 
 def mostrarUsuarios(request):
     usuarios = Usuario.objects.all()

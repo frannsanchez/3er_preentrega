@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo</title>
-</head>
-<body>
+{% extends "aplicacion/index.html" %} 
+{% load static %}
+
+{% block Titulo%} <title>Grupo</title> {% endblock %}
+    
+{% block cuerpo_de_la_vista %}
     <ul>
         <h4>Agregar un Grupo</h4>
                 <form action="{% url 'grupo-create' %}" method="GET">
@@ -24,13 +21,6 @@
             <a href="{% url 'grupo-edit' grupo.id %}">Editar</a>
         </li>
         {% endfor %}
-
-
+        <a href="{% url 'grupo-search' %}">Buscar</a>
     </ul>
-
-
-
-
-
-</body>
-</html>
+{% endblock %}

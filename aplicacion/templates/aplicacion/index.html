@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block Titulo %}<title>Inicio</title>{% endblock %} 
+</head>
+<body>
+   <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
+        <a class="navbar-brand" href="{% url 'usuario-list' %}">Usuario</a>
+        <a class="navbar-brand" href="{% url 'grupo-list' %}">Grupo</a>
+        <a class="navbar-brand" href="{% url 'publicacion-list' %}">Publicaciones</a>
+    </div>
+   </nav> 
+   
+   <h1>3er Preentrega Python</h1>
+
+   <h2>Franco Sanchez - Comision 40425</h2>
+   
+   {% block cuerpo_de_la_vista %}
+   {% endblock %}
+</body>
+</html>

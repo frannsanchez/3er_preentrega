@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuarios</title>
-</head>
-<body>
-    <ul>
+{% extends "aplicacion/index.html" %} 
+{% load static %}
+
+{% block Titulo%} <title>Usuarios</title> {% endblock %}
+    
+{% block cuerpo_de_la_vista %}
+
+<ul>
         <h4>Agregar un Usuario</h4>
                 <form action="{% url 'usuario-create' %}" method="GET">
                     <label name="nombre">Nombre</label>
@@ -20,16 +18,12 @@
                     <input type="text" name="grupo">
                     <input type="submit" value="Agregar">
                 </form>
-        
-        
         {% for usuario in usuarios %}
         <li>{{usuario}} 
             <a href="{% url 'usuario-delete' usuario.id %}">Borrar</a>
             <a href="{% url 'usuario-edit' usuario.id %}">Editar</a>
         </li>
         {% endfor %}
-
-
+        <a href="{% url 'usuario-search' %}">Buscar</a>
     </ul>
-</body>
-</html>
+{% endblock %}

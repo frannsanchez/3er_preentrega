@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Usuario</title>
-</head>
-<body>
+{% extends "aplicacion/index.html" %} 
+{% load static %}
+
+{% block Titulo%} <title>Editar Usuario</title> {% endblock %}
+    
+{% block cuerpo_de_la_vista %}
     <ul>
         <h4>Editar Usuario</h4>
         <form action="{% url 'usuario-edit' id=user.id %}" method="POST">
@@ -24,6 +21,5 @@
             <br>
             <input type="submit" value="Editar">
         </form>
-        
-</body>
-</html>
+    </ul>
+{% endblock %}
