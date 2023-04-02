@@ -13,19 +13,16 @@ def agregarUsuario(request):
     grupoU = request.GET.get("grupo")
     nuevoUsuario = Usuario(nombre=nombreU, usuario=usuarioU, contrasena=contrasenaU, grupo=grupoU)
     nuevoUsuario.save()
-    
     return mostrarUsuarios(request)
 
 def borrarUsuario(request, id):
     user = Usuario.objects.filter(id=id).first()
     user.delete()
-    
     return mostrarUsuarios(request)
 
 def buscarUsuario(request):
     criterio = request.GET.get("buscar")
     usuarios = Usuario.objects.filter(nombre__icontains=criterio).all()
-
     return render(request, "aplicacion/usuarioBuscar.html", {"usuarios": usuarios})
 
 def editarUsuario(request, id): 

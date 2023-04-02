@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from aplicacion.views import *
+from grupo.views import *
  
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,5 +24,10 @@ urlpatterns = [
     path('usuarios/agregar', agregarUsuario, name="usuario-create"),
     path('usuario/borrar/<id>', borrarUsuario, name="usuario-delete"),
     path('usuarioBuscar', buscarUsuario, name="usuario-search"),
-    path('usuarioEditar/<id>', editarUsuario, name='usuario-edit'), 
+    path('usuarioEditar/<id>', editarUsuario, name='usuario-edit'),
+    path('grupo/', mostrarGrupos, name="grupos-list"),
+    path('grupo/agregar', agregarGrupo, name="grupo-create"),
+    path('grupo/borrar/<id>', borrarGrupo, name="grupo-delete"),
+    path('grupoBuscar', buscarGrupo, name="grupo-search"),
+    path('grupoEditar/<id>', editarGrupo, name='grupo-edit'), 
 ]
