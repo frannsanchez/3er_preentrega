@@ -30,8 +30,12 @@ def buscarUsuario(request):
 
 def editarUsuario(request, id): 
     user = Usuario.objects.filter(id=id).first()
-    user.editar()
-    user.save()
-    return mostrarUsuarios(request)
+    if request.method == 'POST':
+        variable = request.POST.get('variable')
+        nuevo = request.POST.get('nuevo')
+        user.editar(variable, nuevo)
+        user.save()
+        return mostrarUsuarios(request)
+    return render(request, 'aplicacion/usuarioEditar.html', {'user': user})
 
 
