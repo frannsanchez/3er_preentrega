@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from aplicacion.models import Usuario, Publicacion, Grupo
+from aplicacion.models import Usuario
 
 def mostrarUsuarios(request):
     usuarios = Usuario.objects.all()
