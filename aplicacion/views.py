@@ -27,3 +27,11 @@ def buscarUsuario(request):
     usuarios = Usuario.objects.filter(nombre__icontains=criterio).all()
 
     return render(request, "aplicacion/usuarioBuscar.html", {"usuarios": usuarios})
+
+def editarUsuario(request, id): 
+    user = Usuario.objects.filter(id=id).first()
+    user.editar()
+    user.save()
+    return mostrarUsuarios(request)
+
+

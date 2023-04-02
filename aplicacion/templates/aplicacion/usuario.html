@@ -26,6 +26,7 @@
         {% for usuario in usuarios %}
         <li>{{usuario}} 
             <a href="{% url 'usuario-delete' usuario.id %}">Borrar</a>
+            <a href="{% url 'usuario-edit' usuario.id %}">Editar</a>
         </li>
         {% endfor %}
 

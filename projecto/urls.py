@@ -22,5 +22,6 @@ urlpatterns = [
     path('usuarios/', mostrarUsuarios, name="usuarios-list"),
     path('usuarios/agregar', agregarUsuario, name="usuario-create"),
     path('usuario/borrar/<id>', borrarUsuario, name="usuario-delete"),
-    path('usuarioBuscar', buscarUsuario, name="usuario-search")   
+    path('usuarioBuscar', buscarUsuario, name="usuario-search"),
+    path('usuarioEditar/<id>', editarUsuario, name='usuario-edit'),   
 ]

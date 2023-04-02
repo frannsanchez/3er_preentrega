@@ -6,6 +6,10 @@ class Usuario(models.Model):
     contrasena = models.TextField(max_length=100)
     grupo = models.TextField(max_length=100)
 
+    def editar(self):
+        self.variable = nuevo
+        
+
     def __str__(self):
         return f"{self.id} - {self.usuario} - {self.grupo}"
 
