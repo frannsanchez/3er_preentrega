@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from aplicacion.views import *
 from grupo.views import *
+from publicacion.views import *
+
  
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +32,9 @@ urlpatterns = [
     path('grupo/borrar/<id>', borrarGrupo, name="grupo-delete"),
     path('grupoBuscar', buscarGrupo, name="grupo-search"),
     path('grupoEditar/<id>', editarGrupo, name='grupo-edit'), 
+    path('publicacion/', mostrarPublicaciones, name="publicaion-list"),
+    path('publicacion/agregar', agregarPublicacion, name="publicacion-create"),
+    path('publicacion/borrar/<id>', borrarPublicacion, name="publicacion-delete"),
+    path('publicacionBuscar', buscarPublicacion, name="publicacion-search"),
+    path('publicacionEditar/<id>', editarPublicacion, name='publicacion-edit'), 
 ]

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicaciones</title>
+</head>
+<body>
+    <ul>
+        <h4>Agregar una Publicacion</h4>
+                <form action="{% url 'publicacion-create' %}" method="GET">
+                    <label name="usuario">Usuario</label>
+                    <input type="text" name="usuario">
+                    <label name="titulo">titulo</label>
+                    <input type="text" name="titulo">
+                    <label name="cuerpo">cuerpo</label>
+                    <input type="text" name="cuerpo">
+                    <input type="submit" value="Publicar">
+                </form>
+        
+        
+        {% for publicacion in publicaciones %}
+        <li>{{publicacion}} 
+            <a href="{% url 'publicacion-delete' publicacion.id %}">Borrar</a>
+            <a href="{% url 'publicacion-edit' publicacion.id %}">Editar</a>
+        </li>
+        {% endfor %}
+
+
+    </ul>
+</body>
+</html>

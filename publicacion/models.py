@@ -8,11 +8,11 @@ class Publicacion(models.Model):
 
     def editar(self, variable, nuevo):
         if variable == 'usuario':
-            self.nombre = nuevo
-        elif variable == 'titulo':
             self.usuario = nuevo
+        elif variable == 'titulo':
+            self.titulo = nuevo
         elif variable == 'cuerpo':
-            self.contrasena = nuevo
+            self.cuerpo = nuevo
     
     def __str__(self):
         return f"{self.id} - {self.titulo} - {self.cuerpo} - {self.usuario} - {self.fecha_publicacion}"

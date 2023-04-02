@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from aplicacion.models import Usuario
+from django.views.generic import ListView
+
 
 def mostrarUsuarios(request):
     usuarios = Usuario.objects.all()
@@ -22,8 +24,11 @@ def borrarUsuario(request, id):
 
 def buscarUsuario(request):
     criterio = request.GET.get("buscar")
-    usuarios = Usuario.objects.filter(nombre__icontains=criterio).all()
-    return render(request, "aplicacion/usuarioBuscar.html", {"usuarios": usuarios})
+    if criterio:
+        usuarios = Usuario.objects.filter(nombre__icontains=criterio).all()
+        return render(request, "aplicacion/usuarioBuscar.html", {"usuarios":usuarios})
+    return render(request, "aplicacion/usuarioBuscar.html")
+
 
 def editarUsuario(request, id): 
     user = Usuario.objects.filter(id=id).first()

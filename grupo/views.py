@@ -9,7 +9,7 @@ def mostrarGrupos(request):
 def agregarGrupo(request):
     nombreU = request.GET.get("nombre")
     descripcionU = request.GET.get("descripcion")
-    nuevoGrupo = Grupo(nombre=nombreU, descripcion=descripcionU)
+    nuevoGrupo = Grupo(nombre=nombreU, descripcion = descripcionU)
     nuevoGrupo.save()
     return mostrarGrupos(request)
 
@@ -20,8 +20,10 @@ def borrarGrupo(request, id):
 
 def buscarGrupo(request):
     criterio = request.GET.get("buscar")
-    grupos = Grupo.objects.filter(nombre__icontains=criterio).all()
-    return render(request, "grupo/grupoBuscar.html", {"grupos": grupos})
+    if criterio:
+        grupos = Grupo.objects.filter(nombre__icontains = criterio).all()
+        return render(request, "grupo/grupoBuscar.html", {"grupos":grupos})
+    return render(request, "grupo/grupoBuscar.html")
 
 def editarGrupo(request, id): 
     grupo = Grupo.objects.filter(id=id).first()

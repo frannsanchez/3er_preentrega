@@ -12,16 +12,14 @@
         <h1>Busqueda de Usuarios</h1>
 
         <form action="{% url 'usuario-search' %}" method="GET">
-            <label name="buscar">Ingrese nombre:</label>
+            <label name="buscar">Ingrese Nombre:</label>
             <input type="text" name="buscar">
             <input type="submit" value="Buscar">
         </form>
-
         {%for usuario in usuarios %}
         <li>{{usuario}}</li>
         
         {% endfor %}
-
 
     </ul>
 
