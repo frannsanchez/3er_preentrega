@@ -1,7 +1,7 @@
 # 3er Preentrega Curso Python 
 
-**Alumno:** Franco Sanchez
-**Comision:** 40425
+###**Alumno:** Franco Sanchez
+###**Comision:** 40425
 
 ## Instrucciones:
 #### 1. Para poder ejecutar el repositorio es necesario contar con Python y Django instalado en su IDE de preferencia. 
