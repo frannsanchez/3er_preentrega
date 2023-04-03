@@ -1,10 +1,10 @@
 # 3er Preentrega Curso Python 
 
-**Alumno: ** Franco Sanchez
-** Comision:** 40425
+** Alumno: Franco Sanchez
+** Comision: 40425
 
 ## Instrucciones:
-####1.  Para poder ejecutar el repositorio es necesario contar con Python y Django instalado en su IDE de preferencia. 
+#### 1. Para poder ejecutar el repositorio es necesario contar con Python y Django instalado en su IDE de preferencia. 
 #### Instalador de Python: https://www.python.org/downloads/
 #### Linea de comando para instalar Django:  *pip install django*
 #### 2. Una vez instalado todo lo necesario, abrir la carpeta contenedora del repositorio en el IDE.
